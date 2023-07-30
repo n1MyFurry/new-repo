@@ -3,8 +3,8 @@ import { createProjectMutation, createUserMutation, deleteProjectMutation, getPr
 import { GraphQLClient } from "graphql-request";
 
 const isProduction = process.env.NODE_ENV === "production";
-const apiUrl = process.env.NEXT_PUBLIC_GRAFBASE_API_URL;
-const apiKey = process.env.NEXT_PUBLIC_GRAFBASE_API_KEY;
+const apiUrl = 'https://new-repo-main-kgithub-yandexru.grafbase.app/graphql';
+const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTA3Mzc3OTEsImlzcyI6ImdyYWZiYXNlIiwiYXVkIjoiMDFINktYNk00TjgwSDVFM0tKUU5HV1hHRjQiLCJqdGkiOiIwMUg2S1g2TUVTUUNBM1c5RkgwWkVKSFZBWCIsImVudiI6InByb2R1Y3Rpb24iLCJwdXJwb3NlIjoicHJvamVjdC1hcGkta2V5In0.x7hC7miCwhrpxEGuQUjZwto2XG93yRdeQMqdwKdCXDc';
 const serverUrl = isProduction ? process.env.NEXTAUTH_URL || "https://my-test-app-z9ls.onrender.com" : "http://localhost:3000";
 
 const client = new GraphQLClient(apiUrl);
