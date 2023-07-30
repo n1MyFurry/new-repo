@@ -3,8 +3,8 @@ import { createProjectMutation, createUserMutation, deleteProjectMutation, getPr
 import { GraphQLClient } from "graphql-request";
 
 const isProduction = process.env.NODE_ENV === "production";
-const apiUrl = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_URL || '' : "http://127.0.0.1:4000/graphql";
-const apiKey = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_KEY || '' : 'lmin';
+const apiUrl = process.env.NEXT_PUBLIC_GRAFBASE_API_URL;
+const apiKey = process.env.NEXT_PUBLIC_GRAFBASE_API_KEY;
 const serverUrl = isProduction ? process.env.NEXTAUTH_URL || "https://my-test-app-z9ls.onrender.com" : "http://localhost:3000";
 
 const client = new GraphQLClient(apiUrl);
