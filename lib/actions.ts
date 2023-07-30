@@ -36,7 +36,7 @@ export const createUser = (name: string, email: string, avatarUrl: string) => {
 export const fetchToken = async () => {
     try {
         console.log(serverUrl, ' - servurl');
-        const response = await fetch(`${serverUrl}/api/auth/token`);
+        const response = await fetch(`/api/auth/token`);
         return response.json();
     } catch (error) {
         throw error;
