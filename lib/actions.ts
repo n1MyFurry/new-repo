@@ -5,7 +5,7 @@ import { GraphQLClient } from "graphql-request";
 const isProduction = process.env.NODE_ENV === "production";
 const apiUrl = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_URL || '' : "http://127.0.0.1:4000/graphql";
 const apiKey = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_KEY || '' : 'lmin';
-const serverUrl = isProduction ? process.env.NEXTAUTH_URL : "http://localhost:3000";
+const serverUrl = isProduction ? process.env.NEXTAUTH_URLL : "http://localhost:3000";
 
 const client = new GraphQLClient(apiUrl);
 
@@ -35,6 +35,7 @@ export const createUser = (name: string, email: string, avatarUrl: string) => {
 
 export const fetchToken = async () => {
     try {
+        console.log(serverUrl, ' - servurl');
         const response = await fetch(`${serverUrl}/api/auth/token`);
         return response.json();
     } catch (error) {
